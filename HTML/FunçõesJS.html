@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tipos de funções</h1>
+    
+    <h3>Função Nomeada:</h3>
+    <script>
+        function minhaFuncao() {
+        console.log('Função nomeada');
+        }
+    </script>
+
+    <h3>Função Nomeada com argumento(parametro) e retorno:</h3>
+    <script>
+        function soma(a, b) {
+        return a + b;
+    }
+    </script>
+
+    <h3>Função com Construtor:</h3>
+    <script>
+        var minhaFuncao = new Function("a", "b", "return a + b");
+    </script>
+
+    <h3> Funcao Literal (variável):</h3>
+    <script>
+        var funcaoLiteral = function() {
+        console.log('Função literal');
+        };
+    </script>
+
+    <h3>Função de Flecha (Arrow functions):</h3>
+    <script>
+        var arrowFunction = () => {
+        console.log('Função de flecha');
+    };
+    </script>
+</body>
+</html>
