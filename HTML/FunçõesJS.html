@@ -3,42 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculadora de Áreas</title>
+    <style>
+         .div-flex { display: flex; align-items: center; justify-content: center; }
+         
+         
+    </style>
 </head>
 <body>
-    <h1>Tipos de funções</h1>
-    
-    <h3>Função Nomeada:</h3>
-    <script>
-        function minhaFuncao() {
-        console.log('Função nomeada');
-        }
-    </script>
+    <div class="div-flex">
+        <h1 class="titulo">Calculadora de Áreas Usando funções</h1>
+    </div>
 
-    <h3>Função Nomeada com argumento(parametro) e retorno:</h3>
-    <script>
-        function soma(a, b) {
-        return a + b;
-    }
-    </script>
+    <div class="div-flex">
+        <h3>Círculo</h3>
+        <form onsubmit="calcularAreaCirculo(event)">
+            Raio: <input type="number" step="any" id="raioCirculo" required><br>
+            <input type="submit" value="Calcular">
+        </form>
+        <p id="resultadoCirculo"></p>
 
-    <h3>Função com Construtor:</h3>
-    <script>
-        var minhaFuncao = new Function("a", "b", "return a + b");
-    </script>
+        <script>
+            function calcularAreaCirculo(event) {
+                event.preventDefault();
+                var raio = parseFloat(document.getElementById("raioCirculo").value);
+                var area = Math.PI * raio * raio;
+                document.getElementById("resultadoCirculo").innerText = 'Área do círculo: ' + area.toFixed(2);
+            }
+        </script>
+    </div>
 
-    <h3> Funcao Literal (variável):</h3>
-    <script>
-        var funcaoLiteral = function() {
-        console.log('Função literal');
-        };
-    </script>
+    <br><br>
 
-    <h3>Função de Flecha (Arrow functions):</h3>
-    <script>
-        var arrowFunction = () => {
-        console.log('Função de flecha');
-    };
-    </script>
+    <div class="div-flex">
+        <h3>Retângulo</h3>
+        <form onsubmit="calcularAreaRetangulo(event)">
+            Base: <input type="number" step="any" id="baseRetangulo" required><br>
+            Altura: <input type="number" step="any" id="alturaRetangulo" required><br>
+            <input type="submit" value="Calcular">
+        </form>
+        <p id="resultadoRetangulo"></p>
+
+        <script>
+            function calcularAreaRetangulo(event) {
+                event.preventDefault();
+                var base = parseFloat(document.getElementById("baseRetangulo").value);
+                var altura = parseFloat(document.getElementById("alturaRetangulo").value);
+                var area = base * altura;
+                document.getElementById("resultadoRetangulo").innerText = 'Área do retângulo: ' + area.toFixed(2);
+            }
+        </script>
+    </div>
+
+    <br><br>
+
+    <div class="div-flex">
+        <h3>Triângulo</h3>
+        <form onsubmit="calcularAreaTriangulo(event)">
+            Base: <input type="number" step="any" id="baseTriangulo" required><br>
+            Altura: <input type="number" step="any" id="alturaTriangulo" required><br>
+            <input type="submit" value="Calcular">
+        </form>
+        <p id="resultadoTriangulo"></p>
+
+        <script>
+            function calcularAreaTriangulo(event) {
+                event.preventDefault();
+                var base = parseFloat(document.getElementById("baseTriangulo").value);
+                var altura = parseFloat(document.getElementById("alturaTriangulo").value);
+                var area = (base * altura) / 2;
+                document.getElementById("resultadoTriangulo").innerText = 'Área do triângulo: ' + area.toFixed(2);
+            }
+        </script>
+    </div>
+   
+    <br><br>
+
+    <div class="div-flex">
+        <h3>Quadrado</h3>
+        <form onsubmit="calcularAreaQuadrado(event)">
+            Lado: <input type="number" step="any" id="ladoQuadrado" required><br>
+            <input type="submit" value="Calcular">
+        </form>
+        <p id="resultadoQuadrado"></p>
+
+        <script>
+            function calcularAreaQuadrado(event) {
+                event.preventDefault();
+                var lado = parseFloat(document.getElementById("ladoQuadrado").value);
+                var area = lado * lado;
+                document.getElementById("resultadoQuadrado").innerText = 'Área do quadrado: ' + area.toFixed(2);
+            }
+        </script>
+    </div>
+   
+    <br><br>
+
+    <div class="div-flex">
+        <h3>Losango</h3>
+        <form onsubmit="calcularAreaLosango(event)">
+            Diagonal 1: <input type="number" step="any" id="diagonal1Losango" required><br>
+            Diagonal 2: <input type="number" step="any" id="diagonal2Losango" required><br>
+            <input type="submit" value="Calcular">
+        </form>
+        <p id="resultadoLosango"></p>
+
+        <script>
+            function calcularAreaLosango(event) {
+                event.preventDefault();
+                var diagonal1 = parseFloat(document.getElementById("diagonal1Losango").value);
+                var diagonal2 = parseFloat(document.getElementById("diagonal2Losango").value);
+                var area = (diagonal1 * diagonal2) / 2;
+                document.getElementById("resultadoLosango").innerText = 'Área do losango: ' + area.toFixed(2);
+            }
+        </script>
+    </div>
 </body>
 </html>
