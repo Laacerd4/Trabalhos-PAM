@@ -34,4 +34,12 @@ function somar(a, b) {
     return a + b;
   }
 console.log(somar(5, 7)); // Exemplo de uso
-  
+ 
+
+function somarNumeros() {
+    var num1 = document.getElementById('numero1').value;
+    var num2 = document.getElementById('numero2').value;
+    var soma = Number(num1) + Number(num2);
+
+    document.getElementById('resultado').innerHTML = "Resultado: " + soma;
+}
